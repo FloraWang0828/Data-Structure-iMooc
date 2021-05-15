@@ -41,8 +41,9 @@ public class Array<E> {//支持泛型
 
      */
         //index要合法
-        if(index < 0 || index > size)
+        if(index < 0 || index > size) {
             throw new IllegalArgumentException("AddLast failed.");
+        }
 
         //数组空间的扩容(如果数组满了，不报满error，直接扩容添加元素)
         if(size == data.length){
@@ -59,8 +60,9 @@ public class Array<E> {//支持泛型
     //向所有元素后添加一个新元素
     public void addLast(E e){
         //检查数组是否还有剩余空间
-        if(size == data.length)
+        if(size == data.length) {
             throw new IllegalArgumentException("AddLast failed. Array is full.");
+        }
 
         data[size] = e;
         size++;
